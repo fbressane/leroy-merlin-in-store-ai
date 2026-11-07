@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma IA In-Store | Leroy Merlin & FIAP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-900 min-h-screen flex flex-col items-center p-2 sm:p-6 font-sans text-slate-800">
+
+  <!-- Barra de Navegação Superior da Mini Plataforma -->
+  <header class="w-full max-w-3xl bg-slate-800 text-white rounded-2xl p-3 mb-4 shadow-xl border border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-3">
+    <div class="flex items-center gap-2.5">
+      <div class="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center font-bold text-lg shadow">
+        <i class="fa-solid fa-store text-white text-sm"></i>
+      </div>
+      <div>
+        <h1 class="font-bold text-sm leading-tight">Leroy Merlin • IA In-Store</h1>
+        <p class="text-[11px] text-emerald-400">Challenge FIAP 2026 • 2º Ano Eng. de Software</p>
+      </div>
+    </div>
+
+    <!-- Abas da Plataforma -->
+    <nav class="flex items-center gap-1.5 bg-slate-900/90 p-1.5 rounded-xl w-full sm:w-auto justify-center text-xs">
+      <button id="tabHome" onclick="navigate('home')" 
+        class="px-3 py-2 rounded-lg font-semibold transition-all flex items-center gap-1.5 bg-emerald-600 text-white shadow">
+        <i class="fa-solid fa-house"></i> Home
+      </button>
+      <button id="tabDecor" onclick="navigate('decor')" 
+        class="px-3 py-2 rounded-lg font-semibold transition-all flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-800">
+        <span>🎨</span> Agente Inspira
+      </button>
+      <button id="tabBuild" onclick="navigate('build')" 
+        class="px-3 py-2 rounded-lg font-semibold transition-all flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-800">
+        <span>🛠️</span> Agente Resolve
+      </button>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO 1: ABA HOME (Explicação e Integrantes do Grupo) -->
+  <main id="viewHome" class="w-full max-w-3xl bg-white rounded-2xl shadow-2xl border border-slate-700 overflow-hidden">
+    <!-- Banner Hero -->
+    <div class="bg-gradient-to-r from-[#075E54] to-emerald-700 text-white p-6 sm:p-8">
+      <span class="bg-black/25 text-emerald-200 text-[11px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider border border-emerald-400/30">
+        Solução para o Problema do "Último Metro"
+      </span>
+      <h2 class="text-xl sm:text-2xl font-bold mt-3 leading-snug">
+        Assistentes Inteligentes para Autoatendimento em Loja Física
+      </h2>
+      <p class="text-emerald-100 text-xs sm:text-sm mt-2 leading-relaxed">
+        Em lojas de até 10.000m², clientes enfrentam dúvidas técnicas e estéticas sem vendedores disponíveis nos horários de pico. Nossa plataforma conecta o cliente via WhatsApp a dois especialistas de IA integrados ao estoque e localização exata dos corredores.
+      </p>
+    </div>
+
+    <div class="p-6 sm:p-8 space-y-6">
+      <!-- Cards explicando os 2 Agentes -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">
+          Conheça os Nossos Agentes Especialistas
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          
+          <!-- Card Agente 1 -->
+          <div class="border border-emerald-200 bg-emerald-50/50 rounded-xl p-4 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2.5 mb-2">
+                <span class="text-2xl">🎨</span>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm">Inspira • Arq. & Decoração</h4>
+                  <span class="text-[11px] text-emerald-700 font-medium">Consultoria Estética e Combinações</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mt-2">
+                Ajuda o cliente indeciso a combinar pisos, tintas e iluminação. Analisa fotos do ambiente, gera simulações visuais e indica o corredor exato dos produtos.
+              </p>
+            </div>
+            <button onclick="navigate('decor')" class="mt-4 w-full bg-[#075E54] hover:bg-emerald-800 text-white font-semibold py-2 px-3 rounded-lg text-xs transition flex items-center justify-center gap-1.5 shadow-sm">
+              Testar Agente Inspira <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+
+          <!-- Card Agente 2 -->
+          <div class="border border-slate-200 bg-slate-50 rounded-xl p-4 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2.5 mb-2">
+                <span class="text-2xl">🛠️</span>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm">Resolve • Reforma & Construção</h4>
+                  <span class="text-[11px] text-slate-600 font-medium">Compatibilidade Técnica e Cálculos</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mt-2">
+                Traduz termos técnicos (bitolas, m.c.a., argamassas), valida por foto se uma peça encaixa na instalação do cliente e calcula caixas de piso com margem de segurança.
+              </p>
+            </div>
+            <button onclick="navigate('build')" class="mt-4 w-full bg-slate-800 hover:bg-slate-900 text-white font-semibold py-2 px-3 rounded-lg text-xs transition flex items-center justify-center gap-1.5 shadow-sm">
+              Testar Agente Resolve <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Seção de Integrantes do Grupo (3 Integrantes) -->
+      <div class="border-t border-slate-200 pt-5">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">
+            <i class="fa-solid fa-users text-emerald-600 mr-1"></i>Integrantes do Grupo (FIAP - 2ESOA)
+          </h3>
+          <span class="text-[11px] text-emerald-700 font-medium bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Engenharia de Software</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+          <div class="bg-slate-100 px-3.5 py-3 rounded-lg flex flex-col justify-center border border-slate-200">
+            <span class="text-[10px] text-slate-400 font-semibold uppercase mb-0.5">Integrante 01</span>
+            <span class="font-bold text-slate-800">Felipe Ferreira Bressane</span>
+          </div>
+          <div class="bg-slate-100 px-3.5 py-3 rounded-lg flex flex-col justify-center border border-slate-200">
+            <span class="text-[10px] text-slate-400 font-semibold uppercase mb-0.5">Integrante 02</span>
+            <span class="font-bold text-slate-800">Ketlyn Milleny Castro Hidalgo dos Santos</span>
+          </div>
+          <div class="bg-slate-100 px-3.5 py-3 rounded-lg flex flex-col justify-center border border-slate-200">
+            <span class="text-[10px] text-slate-400 font-semibold uppercase mb-0.5">Integrante 03</span>
+            <span class="font-bold text-slate-800">Eduardo Valente de Oliveira</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- CONTEÚDO 2: SIMULADOR DE CHAT DOS AGENTES (Oculto na Home) -->
+  <section id="viewChat" class="hidden w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[82vh] max-h-[740px] border border-slate-700">
+    
+    <!-- Cabeçalho do WhatsApp -->
+    <div class="bg-[#075E54] text-white p-3.5 shadow-md z-10 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div id="agentAvatar" class="w-11 h-11 rounded-full bg-emerald-600 flex items-center justify-center text-xl shadow-inner border-2 border-white/40">
+          🎨
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <h2 id="agentName" class="font-bold text-sm leading-tight">Inspira • Arquitetura & Decoração</h2>
+            <i class="fa-solid fa-circle-check text-emerald-300 text-xs" title="Agente Oficial Leroy Merlin"></i>
+          </div>
+          <p id="agentSubtitle" class="text-[11px] text-emerald-100 mt-0.5">Especialista em estética, combinações e layout</p>
+        </div>
+      </div>
+      <button onclick="resetChat()" class="text-emerald-100 hover:text-white text-xs bg-black/20 px-2.5 py-1.5 rounded-lg transition" title="Reiniciar conversa">
+        <i class="fa-solid fa-rotate-right"></i>
+      </button>
+    </div>
+
+    <!-- Área de Mensagens do Chat -->
+    <div id="chatContainer" class="flex-1 chat-bg p-3 overflow-y-auto space-y-3 scrollbar-w-2">
+      <!-- Mensagens geradas via JS -->
+    </div>
+
+    <!-- Botões de Ação Rápida para Avaliadores -->
+    <div class="bg-gray-100 px-3 pt-2 pb-1.5 border-t border-gray-200">
+      <div class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">
+        <i class="fa-solid fa-wand-magic-sparkles text-emerald-600 mr-1"></i>Perguntas Rápidas de Teste:
+      </div>
+      <div id="quickPrompts" class="flex gap-1.5 overflow-x-auto pb-1 scrollbar-w-2 whitespace-nowrap text-xs">
+        <!-- Preenchido via JS -->
+      </div>
+    </div>
+
+    <!-- Preview de Foto Anexada -->
+    <div id="imagePreviewContainer" class="hidden bg-emerald-50 px-3 py-2 border-t border-emerald-200 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <img id="imagePreview" src="" class="w-10 h-10 object-cover rounded-lg border border-emerald-300 shadow-sm">
+        <div>
+          <p class="text-xs text-emerald-900 font-semibold">Foto anexada</p>
+          <p class="text-[10px] text-emerald-700">Clique no aviãozinho para enviar</p>
+        </div>
+      </div>
+      <button onclick="clearImage()" class="text-red-500 hover:text-red-700 text-xs font-semibold px-2 py-1 rounded hover:bg-red-50">
+        <i class="fa-solid fa-xmark mr-1"></i>Remover
+      </button>
+    </div>
+
+    <!-- Barra Inferior de Entrada (Foto, Texto, Áudio) -->
+    <div class="bg-[#f0f2f5] p-2.5 flex items-center gap-2 border-t border-gray-300">
+      <label class="cursor-pointer w-10 h-10 rounded-full bg-white text-gray-600 hover:text-[#075E54] hover:bg-emerald-50 flex items-center justify-center shadow-sm transition border border-gray-200" title="Anexar foto">
+        <i class="fa-solid fa-camera text-base"></i>
+        <input id="fileInput" type="file" accept="image/*" class="hidden" onchange="handleImageUpload(event)">
+      </label>
+
+      <button onclick="simulateAudioMessage()" class="w-10 h-10 rounded-full bg-white text-gray-600 hover:text-[#075E54] hover:bg-emerald-50 flex items-center justify-center shadow-sm transition border border-gray-200" title="Simular áudio">
+        <i class="fa-solid fa-microphone text-base"></i>
+      </button>
+
+      <input id="userInput" type="text" placeholder="Digite sua dúvida ou envie foto/áudio..." 
+        class="flex-1 bg-white rounded-full px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 shadow-sm border border-gray-200"
+        onkeypress="if(event.key === 'Enter') sendMessage()">
+
+      <button onclick="sendMessage()" 
+        class="w-10 h-10 rounded-full bg-[#00a884] hover:bg-[#008f6f] text-white flex items-center justify-center shadow-md transition">
+        <i class="fa-solid fa-paper-plane text-sm"></i>
+      </button>
+    </div>
+
+  </section>
+
+  <!-- Scripts separados em camadas (Dados e Aplicação) -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
